@@ -1,0 +1,33 @@
+2.2 In Roulette Wheel Selection(RWS), is the selection with replacement or without replacement? 
+The selection in RWS is without replacement because each selection is determined from a probability density that arises from how fit an individual is. Therefore the greater fitness an individual in the population has the greater chance of the individual to be selected. Being selected for the mating pool does not reduce the availablilty of that individual. In RWS, an accumulative is drawn from the probabilities of each individual to be selected from the population. It serves as a way to find the most fit individuals for a mating pool, it is a method that brings the best individuals if no replacement occurs. Since the fittest individuals are likely to be selected each time, it does not make sense to replace them, it makes for a mating pool that becomes even more unpredictable. As per the algorithm, however, RWS does not replace the individual that was just selected to be in a mating pool. 
+
+2.3 Why do we need to define the crossover rate pc and the mutation rate pm? These parameters are important to be defined, they carry information that determines how each generation in the evolution cycle performs on the fitness level. We define these parameters because they are responsible for how often offspring are introduced into the environment, because the best individuals are involved in mating these regulate the mating process and thereby regulate the chances of improving performance in the evolution cycle. What will happen if pc = pm = 1 in an SGA? In an SGA, if there is equal chance of mutation and cross-over to occer in parents, there would be a rapid change in performance and in probarbly an increase to performance levels. The issue here comes from the fact that the mutation levels are set to such a high value, mutation is a technique that does not aim to improve or worsen an individual; it's stochastic measure in changing an individual could change the state of a very fit individual to a not so fit individual, since it occurs after cross-over, it becomes a way of undoing the good work cross-over has done. It may not always give a bad mutant, but since it occurs everytime or in the same instance as cross-over, it is very likely that at least 50% of the time an undesirable individual would be the outcome of such frequent change. 
+
+2.4 Summarize the difference between SGA, ES, and EP in a table? 
+Evolutionary Strategy 			SGA                          EP
+-makes use of real numbers.     -makes use of probabilities     -inveneted by Fogel
+-offspring are formed with       pc, pm                         -chromosomes are represented 
+crossover like an average of    -SGA's make use of bits to rep   with finite state machines. 
+two random numbers in the pop.   members of the population.Y?   -real numbers are used to rep
+-cross-over are seen as a minimal -crossover is an important tech variables in the most cited algorithm.
+way to change offspring, mutation  in getting new individuals, it  -if your problems can be represented 
+carries more weight.             is more valued than mutation.    by an FSM, this may solve it.
+-mutation is carried out with sd and -mutation brings in a high chance  
+a normal distribution to introduce   of variation in individuals. -can help find authorized number of states,
+disturbances in the choice of offspring.                           appropriate transitions. (in FSM problem)
+-there are no probabilities pm or pc                              -a computer program with fixed structure, but 
+-step size is encoded in the individual                           changing parameters. EP can find best parameters.
+so good parameters make it to the next
+generation, by selecting good individuals
+-SD can change over time, start with a big
+one to get mutations all over the place. 
+Modify to grow smaller, to get closer or
+more specific mutations.
+2.5 What are the meanings of (1 + 1)-ES, (1 + lamda)-ES, and (1, lamda)-ES?
+(1, lamda)-ES; takes the best individuals from the new population lamda. 
+(1 + lamda)-ES; takes the best individuals in '1', and the best individuals from the new population lamda and mixes them together to form a newer population. 
+(1 + 1)-ES; this is just a total of all the best individuals in a constant state '1'. 
+
+2.6 The global search mechanism in an evolutionary strategy is the use of mutations, that alter offsprings in the population by bumping them up or down on a normal distribution. The distribution entails offspring that arise from an average sum of two random parents are mutated with an increase or decrese from N(0, sd). The standard deviation represents the scale of mutation, and can be altered during the process, it may also be the same for all individuals or individual specifc-- this is determined by the designer. 
+The convergence mechanism in an evolutionary strategy involves different forms of combination among the new generation and old. (1, lamda)-ES converges by taking the best individuals from the new population lamda. (1 + lamda)-ES converges by taking the best individuals from both the old generation 1 and new generation lamda.  
+The uphill mechanism of an evolutionary strategy is randomly selecting two parents to cross over with, mutate the genes of offspring by some defined deviation from the norm, and add the new individual to the pool. The fitness of all the individuals are then calculated and a selection scheme is put in place for the formation of the new generation. This occurs till the max number of generations allowed is surpassed. 
