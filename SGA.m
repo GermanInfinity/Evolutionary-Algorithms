@@ -31,7 +31,7 @@ while gen < maxgen
         if j < 2
             accum(j) = indi_fitness(j);
         elseif j > 1
-            accum(j) = indi_fitness(j) + sum(accum);
+            accum(j) = indi_fitness(j) + accum(j - 1);
         end
     end
    
